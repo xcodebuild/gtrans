@@ -1,0 +1,57 @@
+gtrans.txt          for Vim version 7.3 +python           Last change: 2014/8/21
+
+================================================================================
+CONTENTS                                                        *gtrans-contents*
+
+1. Introduction                         |gtrans-intro|
+2. Options                              |gtrans-options|
+3. Commands                             |gtrans-commands|
+4. Authors                              |gtrans-authors|
+5. History                              |gtrans-history|
+
+================================================================================
+INTRODUCTION                                                    *gtrans-intro*
+
+vim-gtrans is a vim plugin which allow you to translate words or sentences
+by using Google Translate.
+
+================================================================================
+OPTIONS                                                         *gtrans-options*
+
+g:gtrans_input_language ~
+
+        description:                set input language
+        default:                    "en"
+
+g:gtrans_output_language ~
+
+        description:                set output language
+        default:                    "zh_CN"
+
+================================================================================
+COMMANDS                                                        *gtrans-commands*
+
+:Gtrans ~
+
+        description:        translate the current word under the cursor
+
+:call Gtrans() ~
+
+        description:        translate all highlighted words or sentences,
+                        in visual mode, so it looks like:
+<
+                            :'<,'>,:call Gtrans()
+>
+
+================================================================================
+AUTHORS                                                         *gtrans-authors*
+CodeFalling
+
+================================================================================
+HISTORY                                                         *gtrans-history*
+
+0.1 ( 2014/8/21 )
+
+    initial release
+
+--------------------------------------------------------------------------------
