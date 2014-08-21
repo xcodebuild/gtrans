@@ -25,7 +25,7 @@ func! s:ShowTransWindow(string) " [[[
 
         " Set up scratch buffer.
         setlocal bufhidden=wipe buftype=nofile
-        setlocal nobuflisted nomodifiable noswapfile nowrap
+        setlocal nobuflisted nomodifiable noswapfile wrap
         nnoremap <buffer> <silent> q :hide<CR>
     endif
     execute s:return_to_window . "wincmd w"
@@ -36,4 +36,27 @@ function! Gtrans()
 endfunction
 
 command! -nargs=0 Gtrans call Gtrans()
+function! s:Exit_Only_Window()
+    " Before quitting Vim, delete the taglist buffer so that
+    " the '0 mark is correctly set to the previous buffer.
+    if v:version < 700
+    if winbufnr(2) == -1
+        bdelete
+        quit
+    endif
+    else
+    if winbufnr(2) == -1
+        if tabpagenr('$') == 1
+        " Only one tag page is present
+        bdelete
+        quit
+        else
+        " More than one tab page is present. Close only the current
+        " tab page
+        close
+        endif
+    endif
+    endif
+endfunction
 
+ autocmd BufEnter TransWindow nested call s:Exit_Only_Window()
