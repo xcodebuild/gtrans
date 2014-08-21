@@ -15,8 +15,8 @@ gtrans 是一个基于 Google Translate 的 vim 插件，可以翻译词语和�
 - [requests](https://github.com/kennethreitz/requests) 
 
 ## Install 安装
-    
-    `Plugin 'CodeFalling/gtrans'` if you use bundle
+
+`Plugin 'CodeFalling/gtrans'` 
 
 ## Variables 变量
 
