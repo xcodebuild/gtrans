@@ -61,4 +61,4 @@ def vim_gtranslate():
         translated = translate(res if res else '' , to_lang , from_lang , is_sentence)
     except Exception:
         pass
-    vim.command (':call s:ShowTransWindow("%s")' % translated)
+    vim.command (':call s:ShowTransWindow("%s")' % translated.replace('"',""))

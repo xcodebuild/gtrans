@@ -54,4 +54,7 @@ HISTORY                                                         *gtrans-history*
 
     initial release
 
+0.2 
+    Show result with a toggle window.
+    Exit Vim if there is only tanslation window. 
 --------------------------------------------------------------------------------

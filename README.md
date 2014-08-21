@@ -31,12 +31,22 @@ Add below to your .vimrc to bind key
 
 ```
 nmap <C-t> :Gtrans<CR>
-imap <C-t> <ESC>:Gtrans<CR>
+imap <C-t> <ESC>:Gtrans<CR>i
 vmap <C-t> :call Gtrans()<CR>
 ```
 
+## Features 特性
+
+- Show result with new window. 
+
+用一个弹出窗口显示翻译结果
+
+- Auto exit Vim when only translate window 
+
+当只剩下翻译窗口时自动退出 Vim
+
 ## ScreenShot 截屏
 
-![word](http://img2.picbed.org/uploads/2014/08/gtrans.jpg)
+![word](http://falling-static.qiniudn.com/v0.2gtrans.jpg.jpg)
 
-![sentence](http://img2.picbed.org/uploads/2014/08/gtrans_sentence.jpg)
+![sentence](http://falling-static.qiniudn.com/v0.2gtrans_sen.jpg.jpg)
