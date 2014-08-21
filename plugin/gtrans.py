@@ -24,7 +24,6 @@ def __do_visual(buff, cur, res=''):
                 buff[buff.mark('>')[0] - 1][:buff.mark('>')[1]]))
 
 
-
 def translate(content , to_lang , from_lang , is_sentence = False):
     content = content.replace(' ','%20')
     url = "http://translate.google.cn/translate_a/single?client=t&sl=%s&tl=%s&hl=en&dt=bd&dt=ex&dt=ld&dt=md&dt=qc&dt=rw&dt=rm&dt=ss&dt=t&dt=at&dt=sw&ie=UTF-8&oe=UTF-8&oc=2&otf=2&rom=1&ssel=0&tsel=0&q=%s" % (from_lang,to_lang,content)
@@ -62,5 +61,4 @@ def vim_gtranslate():
         translated = translate(res if res else '' , to_lang , from_lang , is_sentence)
     except Exception:
         pass
-    print translated
-
+    vim.command (':call s:ShowTransWindow("%s")' % translated)
