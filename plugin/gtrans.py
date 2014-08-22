@@ -1,6 +1,6 @@
 import vim
 import re
-import requests
+import urllib2
 import string
 
 def __do_visual(buff, cur, res=''):
@@ -27,7 +27,9 @@ def __do_visual(buff, cur, res=''):
 def translate(content , to_lang , from_lang , is_sentence = False):
     content = content.replace(' ','%20')
     url = "http://translate.google.cn/translate_a/single?client=t&sl=%s&tl=%s&hl=en&dt=bd&dt=ex&dt=ld&dt=md&dt=qc&dt=rw&dt=rm&dt=ss&dt=t&dt=at&dt=sw&ie=UTF-8&oe=UTF-8&oc=2&otf=2&rom=1&ssel=0&tsel=0&q=%s" % (from_lang,to_lang,content)
-    text = requests.get(url).text.encode('utf-8')
+    req = urllib2.Request(url, headers={'User-Agent' : "Magic Browser"})
+    text = urllib2.urlopen(req).read()
+    #text = requests.get(url).text.encode('utf-8')
     result = set(re.findall('"[\x90-\xff].*?"',text))
     if is_sentence:
         max_length_result = ""
