@@ -11,8 +11,6 @@ gtrans 是一个基于 Google Translate 的 vim 插件，可以翻译词语和�
 - vim compiled with python (+python option) 
 
     包含 python 支持的 vim
- 
-- [requests](https://github.com/kennethreitz/requests) 
 
 ## Install 安装
 
