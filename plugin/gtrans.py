@@ -37,6 +37,7 @@ def translate(content , to_lang , from_lang , is_sentence = False):
             max_length_result = x if len(x)>len(max_length_result) else max_length_result
         return max_length_result
     else:
+        result = [x for x in result if len(x)<10] #result too long is always a sentence
         return '|  ' + "".join([x[1:-1]+' | ' for x in result])
 
 def vim_gtranslate():
